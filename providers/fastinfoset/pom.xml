@@ -1,22 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>2.2.1.GA</version>
+        <version>2.2.1.GA-redhat-1</version>
 	    <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>resteasy-fastinfoset-provider</artifactId>
     <packaging>jar</packaging>
     <name>Resteasy FastInfoSet Provider</name>
-    <description/>
 
     <dependencies>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- keep jaxb provider in test scope as I'm making sure Jackson providers take precedence -->
@@ -30,14 +28,13 @@
             <artifactId>FastInfoset</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.0_spec</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
-            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <!--
