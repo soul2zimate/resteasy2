@@ -23,32 +23,32 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs-war</artifactId>
             <version>${project.version}</version>
             <type>war</type>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>jaxrs-api</artifactId>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>async-http-jbossweb</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>async-http-servlet-3.0</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>async-http-tomcat6</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxb-provider</artifactId>
@@ -84,7 +84,7 @@
             <artifactId>resteasy-jackson-provider</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-spring</artifactId>
             <version>${project.version}</version>
@@ -93,17 +93,17 @@
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-guice</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-cache-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-oauth</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-cdi</artifactId>
@@ -128,11 +128,11 @@
             <artifactId>tjws</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-doseta</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <!--
         <dependency>
             <groupId>tjws</groupId>
