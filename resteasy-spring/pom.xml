@@ -153,12 +153,12 @@
         </dependency>
 
         <!-- Used by org.jboss.resteasy.plugins.server.tjws.* -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
         <!--
         <dependency>
            <groupId>tjws</groupId>

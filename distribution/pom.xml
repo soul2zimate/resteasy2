@@ -123,11 +123,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
 <!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-doseta</artifactId>
