@@ -85,7 +85,7 @@
     <modules>
 
         <!-- Should probably be removed and be treated as external dependency   -->
-        <module>tjws</module>
+<!--        <module>tjws</module>-->
         <module>jaxrs-api</module>
 <!--        <module>resteasy-test-data</module>-->
         <module>resteasy-jaxrs</module>
