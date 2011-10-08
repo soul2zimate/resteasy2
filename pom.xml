@@ -91,7 +91,7 @@
         <module>providers</module>
 <!--        <module>resteasy-jaxrs-war</module>-->
         <module>resteasy-bom</module>
-        <module>resteasy-cache</module>
+<!--        <module>resteasy-cache</module>-->
 <!--        <module>resteasy-guice</module>-->
 <!--        <module>eagledns</module>-->
 <!--        <module>resteasy-doseta</module>-->
