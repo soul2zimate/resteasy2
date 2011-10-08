@@ -15,7 +15,7 @@
     <modules>
         <module>jaxb</module>
         <module>jettison</module>
-        <module>fastinfoset</module>
+<!--        <module>fastinfoset</module>-->
 <!--        <module>test-all-jaxb</module>-->
         <module>jackson</module>
 <!--        <module>test-jackson-jaxb-coexistence</module>-->
