@@ -90,13 +90,13 @@
         <module>resteasy-jaxrs</module>
         <module>providers</module>
 <!--        <module>resteasy-jaxrs-war</module>-->
-        <module>resteasy-bom</module>
+<!--        <module>resteasy-bom</module>-->
 <!--        <module>resteasy-cache</module>-->
 <!--        <module>resteasy-guice</module>-->
 <!--        <module>eagledns</module>-->
 <!--        <module>resteasy-doseta</module>-->
 <!--        <module>resteasy-oauth</module>-->
-        <module>resteasy-links</module>
+<!--        <module>resteasy-links</module>-->
 <!--        <module>async-http-jbossweb</module>-->
 <!--        <module>async-http-tomcat</module>-->
 <!--        <module>resteasy-spring</module>-->
@@ -122,11 +122,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
+<!--            <dependency>
                 <groupId>com.sun.xml.fastinfoset</groupId>
                 <artifactId>FastInfoset</artifactId>
                 <version>1.2.7</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>org.codehaus.jettison</groupId>
                 <artifactId>jettison</artifactId>
