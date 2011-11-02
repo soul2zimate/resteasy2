@@ -2,6 +2,9 @@ package org.jboss.resteasy.plugins.delegates;
 
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.ext.RuntimeDelegate;
+
+import org.jboss.resteasy.core.ExtendedCacheControl;
+
 import java.util.List;
 
 /**
@@ -13,7 +16,7 @@ public class CacheControlDelegate implements RuntimeDelegate.HeaderDelegate<Cach
    public CacheControl fromString(String value) throws IllegalArgumentException
    {
       if (value == null) throw new IllegalArgumentException("Cache-Control value is null");
-      CacheControl result = new CacheControl();
+      ExtendedCacheControl result = new ExtendedCacheControl();
 
       String[] directives = value.split(",");
       for (String directive : directives)
@@ -77,7 +80,7 @@ public class CacheControlDelegate implements RuntimeDelegate.HeaderDelegate<Cach
          }
          else if ("public".equals(lowercase))
          {
-            // do nothing
+             result.setPublic(true);
          }
          else
          {
@@ -98,17 +101,13 @@ public class CacheControlDelegate implements RuntimeDelegate.HeaderDelegate<Cach
    public String toString(CacheControl value)
    {
       StringBuffer buffer = new StringBuffer();
-      if (!value.isPrivate()) buffer.append("public");
-      if (value.isMustRevalidate()) addDirective("must-revalidate", buffer);
-      if (value.isNoTransform()) addDirective("no-transform", buffer);
-      if (value.isNoStore()) addDirective("no-store", buffer);
-      if (value.isProxyRevalidate()) addDirective("proxy-revalidate", buffer);
-      if (value.getSMaxAge() > -1) addDirective("s-maxage", buffer).append("=").append(value.getSMaxAge());
-      if (value.getMaxAge() > -1) addDirective("max-age", buffer).append("=").append(value.getMaxAge());
       if (value.isNoCache())
       {
          List<String> fields = value.getNoCacheFields();
-         if (fields.size() < 1) addDirective("no-cache", buffer);
+         if (fields.size() < 1)
+         {
+            addDirective("no-cache", buffer);
+         }
          else
          {
             for (String field : value.getNoCacheFields())
@@ -117,6 +116,20 @@ public class CacheControlDelegate implements RuntimeDelegate.HeaderDelegate<Cach
             }
          }
       }
+      if (value instanceof ExtendedCacheControl)
+      {
+          ExtendedCacheControl ecc = (ExtendedCacheControl) value;
+          if (ecc.isPublic())
+          {
+              addDirective("public", buffer);
+          }
+      }
+      if (value.isMustRevalidate()) addDirective("must-revalidate", buffer);
+      if (value.isNoTransform()) addDirective("no-transform", buffer);
+      if (value.isNoStore()) addDirective("no-store", buffer);
+      if (value.isProxyRevalidate()) addDirective("proxy-revalidate", buffer);
+      if (value.getSMaxAge() > -1) addDirective("s-maxage", buffer).append("=").append(value.getSMaxAge());
+      if (value.getMaxAge() > -1) addDirective("max-age", buffer).append("=").append(value.getMaxAge());
       if (value.isPrivate())
       {
          List<String> fields = value.getPrivateFields();

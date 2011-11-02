@@ -17,7 +17,7 @@ import java.util.Map;
  * @author <a href="mailto:bill@burkecentral.com">Bill Burke</a>
  * @version $Revision: 1 $
  */
-public class HttpServletRequestDelegate 
+public class HttpServletRequestDelegate implements HttpServletRequest
 {
    protected HttpServletRequest delegate;
 
