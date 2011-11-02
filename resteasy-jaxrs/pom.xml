@@ -15,7 +15,7 @@
             <artifactId>jaxrs-api</artifactId>
         </dependency>
 
-        <dependency>
+<!--        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
             <scope>provided</scope>
@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
-		</dependency>
+		</dependency>-->
 
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
