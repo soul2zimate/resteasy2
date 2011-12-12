@@ -8,6 +8,45 @@
 
 <chapter id="Migration_from_older_versions">
 <title>Migration from older versions</title>
+<sect1>
+    <title>Migrating from 2.2.x to 2.3</title>
+    <itemizedlist>
+        <listitem>
+            The Apache Abdera integration has been removed as a project.  If you want the integration back, please
+            ping our dev lists or open a JIRA.
+        </listitem>
+        <listitem>
+            Apache Http Client 4.x is now the default underlying client HTTP mechanism.  If there are problems, you
+            can change the default mechanism by calling ClientRequest.setDefaultExecutorClass.
+        </listitem>
+        <listitem>
+            ClientRequest no longer supports a shared default executor.  The 
+            <code>createPerRequestInstance</code> parameter has been removed from
+            <methodname>ClientRequest.setDefaultExecutorClass()</methodname>.
+        </listitem>
+        <listitem>
+          resteasy-doseta module no longer exists.  It is now renamed to the resteasy-crypto module and also includes other things beyond doseta.
+        </listitem>
+        <listitem>
+          Doseta work has be refactored a bit and may have broken backward compatibility.
+        </listitem>
+        <listitem>
+          Jackson has been upgraded from 1.6.3 to 1.8.5.  Let me know if there are any issues.
+        </listitem>
+        <listitem>
+          Form parameter processing behavior was modified because of RESTEASY-574.  If you are having problems with form paramater processing on Tomcat after
+          this fix, please log a JIRA or contact the resteasy-developers email list.
+        </listitem>
+        <listitem>
+	  Some subtle changes were made to ExceptionMapper handling so that you can write ExceptionMappers for any exception thrown internally or within
+	  your application.  See JIRA Issue RESTEASY-595 for more details.  This may have an effect on existing applications that have an ExceptionMapper
+	  for RuntimeException in that you will start to see Resteasy internal exceptions being caught by this kind of ExceptionMapper.
+        </listitem>
+        <listitem>
+            The resteasy-cache (Server-side cache) will now invalidate the cache when a PUT, POST, or DELETE is done on a particular URI.
+        </listitem>
+    </itemizedlist>
+</sect1>
 <sect1 id="22_221">
     <title>Migrating from 2.2.0 to 2.2.1</title>
     <itemizedlist>
@@ -56,7 +95,7 @@
                 tjws. It will match the resteasy distribution version
             </listitem>
             <listitem>
-                Please check out the JBoss 6 integration. It makes things alot easier if you are deploying in that
+                Please check out the JBoss 6 integration. It makes things a lot easier if you are deploying in that
                 environment
             </listitem>
             <listitem>
@@ -74,7 +113,7 @@
                 We have forked TJWS, the servlet container used for embedded testing into the group
                 org.jboss.resteasy, with the artifact id of tjws. You will need
                 to remove these dependencies from your maven builds if you are using any part of the resteasy
-                embebbable server. TJWS has a number of startup/shutdown
+                embeddable server. TJWS has a number of startup/shutdown
                 race conditions we had to fix in order to make unit testing viable.
             </listitem>
             <listitem>

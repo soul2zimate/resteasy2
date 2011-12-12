@@ -2,7 +2,11 @@ package org.jboss.resteasy.client.core;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.net.URI;
 import java.util.Map;
+
+import org.jboss.resteasy.client.ProxyBuilder;
+import org.jboss.resteasy.client.ProxyConfig;
 
 /**
  * @author <a href="mailto:bill@burkecentral.com">Bill Burke</a>
@@ -10,25 +14,30 @@ import java.util.Map;
  */
 public class ClientProxy implements InvocationHandler
 {
-   private Map<Method, ClientInvoker> methodMap;
-   private Class<?> clazz;
+	private Map<Method, MethodInvoker> methodMap;
+	private Class<?> clazz;
+	private final URI base;
+	private final ProxyConfig config;
 
-   public ClientProxy(Map<Method, ClientInvoker> methodMap)
-   {
-      this.methodMap = methodMap;
-   }
+	public ClientProxy(Map<Method, MethodInvoker> methodMap, URI base, ProxyConfig config)
+	{
+		super();
+		this.methodMap = methodMap;
+		this.base = base;
+		this.config = config;
+	}
 
-   public Class<?> getClazz()
-   {
-      return clazz;
-   }
+	public Class<?> getClazz()
+	{
+		return clazz;
+	}
 
-   public void setClazz(Class<?> clazz)
-   {
-      this.clazz = clazz;
-   }
+	public void setClazz(Class<?> clazz)
+	{
+		this.clazz = clazz;
+	}
 
-   public Object invoke(Object o, Method method, Object[] args)
+	public Object invoke(Object o, Method method, Object[] args)
            throws Throwable
    {
       // equals and hashCode were added for cases where the proxy is added to
@@ -36,7 +45,7 @@ public class ClientProxy implements InvocationHandler
       // transactional Resources to a Collection, and it calls equals and
       // hashCode.
 
-      ClientInvoker clientInvoker = methodMap.get(method);
+      MethodInvoker clientInvoker = methodMap.get(method);
       if (clientInvoker == null)
       {
          if (method.getName().equals("equals"))
@@ -58,10 +67,17 @@ public class ClientProxy implements InvocationHandler
          else if (method.getName().equals("applyClientInvokerModifier"))
          {
             ClientInvokerModifier modifier = (ClientInvokerModifier) args[0];
-            for (ClientInvoker invoker : methodMap.values())
-               modifier.modify(invoker);
+            for (MethodInvoker invoker : methodMap.values())
+            {
+            	if(invoker instanceof ClientInvoker)
+               		modifier.modify((ClientInvoker)invoker);
+            }
 
             return null;
+         }
+         else if(method.getName().equals("as") && args.length == 1 && args[0] instanceof Class)
+         {
+        	 return ProxyBuilder.createProxy((Class<?>)args[0], base, config);
          }
       }
 
@@ -72,27 +88,27 @@ public class ClientProxy implements InvocationHandler
       return clientInvoker.invoke(args);
    }
 
-   @Override
-   public boolean equals(Object obj)
-   {
-      if (obj == null || !(obj instanceof ClientProxy))
-         return false;
-      ClientProxy other = (ClientProxy) obj;
-      if (other == this)
-         return true;
-      if (other.clazz != this.clazz)
-         return false;
-      return super.equals(obj);
-   }
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj == null || !(obj instanceof ClientProxy))
+			return false;
+		ClientProxy other = (ClientProxy) obj;
+		if (other == this)
+			return true;
+		if (other.clazz != this.clazz)
+			return false;
+		return super.equals(obj);
+	}
 
-   @Override
-   public int hashCode()
-   {
-      return clazz.hashCode();
-   }
+	@Override
+	public int hashCode()
+	{
+		return clazz.hashCode();
+	}
 
-   public String toString()
-   {
-      return "Client Proxy for :" + clazz.getName();
-   }
+	public String toString()
+	{
+		return "Client Proxy for :" + clazz.getName();
+	}
 }

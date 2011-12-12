@@ -49,6 +49,8 @@
                 <!ENTITY Authentication SYSTEM "modules/Authentication.xml">
                 <!ENTITY CDI SYSTEM "modules/CDI.xml">
                 <!ENTITY Signature SYSTEM "modules/signature.xml">
+                <!ENTITY SMIME SYSTEM "modules/smime.xml">
+                <!ENTITY Validation SYSTEM "modules/Validation.xml">
                 ]>
 
 <book>
@@ -56,7 +58,7 @@
    <bookinfo>
       <title>RESTEasy JAX-RS</title>
       <subtitle>RESTFul Web Services for Java</subtitle>
-      <releaseinfo>2.2.3.GA</releaseinfo>
+      <releaseinfo>2.3.0.GA</releaseinfo>
    </bookinfo>
 
    <toc/>
@@ -126,6 +128,7 @@
    &Securing_JAX-RS_and_RESTeasy;
    &Authentication;
    &Signature;
+   &SMIME;
    &RESTEasy_EJB_Integration;
    &RESTEasy_Spring_Integration;
    &CDI;
@@ -133,6 +136,7 @@
     &Guice;
    &RESTEasy_Client_Framework;
    &AJAX_Client;
+   &Validation;
    &Maven_and_RESTEasy;
    &JBoss;
    &Migration_from_older_versions;

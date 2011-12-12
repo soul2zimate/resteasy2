@@ -11,6 +11,7 @@ import org.jboss.resteasy.spi.LinkHeader;
 import org.jboss.resteasy.spi.ProviderFactoryDelegate;
 import org.jboss.resteasy.spi.ResteasyProviderFactory;
 import org.jboss.resteasy.spi.StringConverter;
+import org.jboss.resteasy.util.Encode;
 import org.jboss.resteasy.util.GenericType;
 
 import javax.ws.rs.core.Cookie;
@@ -65,55 +66,24 @@ public class ClientRequest extends ClientInterceptorRepositoryImpl implements Cl
    protected List<String> pathParameterList;
    protected LinkHeader linkHeader;
    protected Map<String, Object> attributes = new HashMap<String, Object>();
-
-   private static String defaultExecutorClasss = "org.jboss.resteasy.client.core.executors.ApacheHttpClientExecutor";
-   //private static String defaultExecutorClasss = "org.jboss.resteasy.client.core.executors.ApacheHttpClient4Executor";
+ 
+   private static String defaultExecutorClasss = "org.jboss.resteasy.client.core.executors.ApacheHttpClient4Executor";
 
    /**
     * Set the default executor class name.
     *
     * @param classname
-    * @param createPerRequestInstance whether the instance can be used by every request
     */
-   public static void setDefaultExecutorClass(String classname, boolean createPerRequestInstance)
+   public static void setDefaultExecutorClass(String classname)
    {
-      synchronized (lock)
-      {
-         defaultExecutorClasss = classname;
-         defaultExecutor = null;
-         createPerInstance = createPerRequestInstance;
-      }
+      defaultExecutorClasss = classname;
    }
-
-   private static volatile boolean createPerInstance = true;
-
-   private static volatile ClientExecutor defaultExecutor = null;
-
-   private static final Object lock = new Object();
 
    public static ClientExecutor getDefaultExecutor()
    {
-      if (createPerInstance) return createDefaultExecutorInstance();
-      ClientExecutor result = defaultExecutor;
-      if (result == null)
-      {
-         synchronized (lock)
-         {
-            result = defaultExecutor;
-            if (result == null)
-            {
-               defaultExecutor = result = createDefaultExecutorInstance();
-            }
-         }
-      }
-      return result;
-   }
-
-   private static ClientExecutor createDefaultExecutorInstance()
-   {
       try
       {
-         Class clazz = Thread.currentThread().getContextClassLoader().loadClass(defaultExecutorClasss);
+         Class<?> clazz = Thread.currentThread().getContextClassLoader().loadClass(defaultExecutorClasss);
          return (ClientExecutor) clazz.newInstance();
       }
       catch (Exception e)
@@ -712,7 +682,7 @@ public class ClientRequest extends ClientInterceptorRepositoryImpl implements Cl
       return response;
    }
 
-   public <T> ClientResponse<T> httpmethod(String method, Class<T> returnType,
+   public <T> ClientResponse<T> httpMethod(String method, Class<T> returnType,
                                            Type genericType) throws Exception
    {
       BaseClientResponse response = (BaseClientResponse) httpMethod(method);
@@ -766,7 +736,7 @@ public class ClientRequest extends ClientInterceptorRepositoryImpl implements Cl
          {
             List<String> values = entry.getValue();
             for (String value : values)
-               builder.queryParam(entry.getKey(), value);
+               builder.clientQueryParam(entry.getKey(), value);
          }
       }
       if (pathParameterList != null && !pathParameterList.isEmpty())
@@ -779,7 +749,10 @@ public class ClientRequest extends ClientInterceptorRepositoryImpl implements Cl
          {
             List<String> values = entry.getValue();
             for (String value : values)
-               builder.substitutePathParam(entry.getKey(), value, false);
+            {
+               value = Encode.encodePathAsIs(value);
+               builder.substitutePathParam(entry.getKey(), value, true);
+            }
          }
       }
       if (finalUri == null)

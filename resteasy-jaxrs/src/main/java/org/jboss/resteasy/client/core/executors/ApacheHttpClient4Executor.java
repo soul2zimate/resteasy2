@@ -11,10 +11,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.params.HttpClientParams;
+import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HttpContext;
 import org.jboss.resteasy.client.ClientExecutor;
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
@@ -39,10 +41,14 @@ import java.util.Map;
 public class ApacheHttpClient4Executor implements ClientExecutor
 {
    protected HttpClient httpClient;
+   protected boolean createdHttpClient;
+   protected HttpContext httpContext;
+   protected boolean closed;
 
    public ApacheHttpClient4Executor()
    {
       this.httpClient = new DefaultHttpClient();
+      this.createdHttpClient  = true;
    }
 
    public ApacheHttpClient4Executor(HttpClient httpClient)
@@ -50,9 +56,25 @@ public class ApacheHttpClient4Executor implements ClientExecutor
       this.httpClient = httpClient;
    }
 
+   public ApacheHttpClient4Executor(HttpClient httpClient, HttpContext httpContext)
+   {
+      this.httpClient = httpClient;
+      this.httpContext = httpContext;
+   }
+   
    public HttpClient getHttpClient()
    {
       return httpClient;
+   }
+   
+   public HttpContext getHttpContext()
+   {
+	  return httpContext;
+   }
+
+   public void setHttpContext(HttpContext httpContext)
+   {
+      this.httpContext = httpContext;
    }
 
    public static CaseInsensitiveMap<String> extractHeaders(
@@ -84,8 +106,8 @@ public class ApacheHttpClient4Executor implements ClientExecutor
       final HttpRequestBase httpMethod = createHttpMethod(uri, request.getHttpMethod());
       loadHttpMethod(request, httpMethod);
 
-      final HttpResponse res = httpClient.execute(httpMethod);
-
+      final HttpResponse res = httpClient.execute(httpMethod, httpContext);
+      
       BaseClientResponse response = new BaseClientResponse(new BaseClientResponseStreamFactory()
       {
          InputStream stream;
@@ -141,10 +163,6 @@ public class ApacheHttpClient4Executor implements ClientExecutor
       else if ("POST".equals(restVerb))
       {
          return new HttpPost(url);
-      }
-      else if ("DELETE".equals(restVerb))
-      {
-         return new HttpDelete(url);
       }
       else
       {
@@ -238,4 +256,30 @@ public class ApacheHttpClient4Executor implements ClientExecutor
       }
    }
 
+   public void close() 
+   {
+      if (closed)
+         return;
+      
+      if (createdHttpClient && httpClient != null)
+      {
+         ClientConnectionManager manager = httpClient.getConnectionManager();
+         if (manager != null)
+         {
+            manager.shutdown();
+         }
+      }
+      closed = true;
+   }
+   
+   public boolean isClosed()
+   {
+      return closed;
+   }
+   
+   public void finalize() throws Throwable
+   {
+      close();
+      super.finalize();
+   }
 }

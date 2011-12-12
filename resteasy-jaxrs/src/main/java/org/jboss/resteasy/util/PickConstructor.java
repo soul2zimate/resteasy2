@@ -13,6 +13,7 @@ import java.lang.reflect.Modifier;
  */
 public class PickConstructor
 {
+
    /**
     * Pick best constructor for a provider or resource class
     * <p/>
