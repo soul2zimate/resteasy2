@@ -71,11 +71,11 @@
 
 
         <!-- 4.0 refactor of apache httpclient -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>[4.1.2,4.1.2-redhat-1]</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>net.jcip</groupId>
