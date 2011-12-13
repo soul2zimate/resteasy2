@@ -23,10 +23,10 @@
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>com.sun.xml.stream</groupId>
             <artifactId>sjsxp</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>

@@ -22,8 +22,8 @@
 <!--        <module>abdera-atom</module>-->
         <module>resteasy-atom</module>
         <module>multipart</module>
-        <module>yaml</module>
-        <module>resteasy-html</module>
+<!--        <module>yaml</module>-->
+<!--        <module>resteasy-html</module>-->
 <!--        <module>test-resteasy-html</module>-->
     </modules>
 </project>
