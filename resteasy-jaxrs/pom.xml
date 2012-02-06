@@ -20,7 +20,6 @@
             <groupId>org.jboss.spec.javax.servlet</groupId>
             <artifactId>jboss-servlet-api_3.0_spec</artifactId>
             <scope>provided</scope>
-            <version>1.0.0.Final</version>
         </dependency>
 
         <dependency>
@@ -55,7 +54,6 @@
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
             <artifactId>jboss-annotations-api_1.1_spec</artifactId>
-            <version>1.0.0.Final</version>
         </dependency>
 
         <!-- javax.activation.DataSource provider is required by spec -->

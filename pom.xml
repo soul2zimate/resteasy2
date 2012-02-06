@@ -219,7 +219,6 @@
         <plugin>
       <groupId>org.jboss.jandex</groupId>
       <artifactId>jandex-maven-plugin</artifactId>
-      <version>1.0-redhat-1</version>
       <executions>
         <execution>
           <id>make-index</id>
@@ -227,9 +226,7 @@
             <goal>jandex</goal>
           </goals>
           <!-- phase is 'process-classes by default' -->
-          <configuration>
-            <!-- Nothing needed here for simple cases -->
-          </configuration>
+          <configuration></configuration>
         </execution>
       </executions>
     </plugin>
