@@ -29,6 +29,20 @@
         </license>
     </licenses>
 
+<repositories>
+		<repository>
+			<id>jboss-releases-repository-mead</id>
+			<name>JBoss Releases Repository Mead</name>
+			<url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-releases-repository-mead-build</id>
+			<name>JBoss Releases Repository Mead Build</name>
+			<url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven</url>
+		</pluginRepository>
+	</pluginRepositories>
     <scm>
         <connection>scm:svn:https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk/jaxrs</connection>
         <developerConnection>scm:svn:https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk/jaxrs</developerConnection>
@@ -216,7 +230,12 @@
                         </execution>
                     </executions>
                 </plugin>
-        <plugin>
+            
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+                <plugin>
       <groupId>org.jboss.jandex</groupId>
       <artifactId>jandex-maven-plugin</artifactId>
       <executions>
@@ -230,11 +249,7 @@
         </execution>
       </executions>
     </plugin>
-            
-            </plugins>
-        </pluginManagement>
 
-        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
