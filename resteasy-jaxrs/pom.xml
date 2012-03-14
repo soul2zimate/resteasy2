@@ -67,6 +67,10 @@
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
         </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpcore</artifactId>
+        </dependency>
 
 
         <!-- 4.0 refactor of apache httpclient -->
