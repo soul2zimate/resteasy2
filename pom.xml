@@ -33,6 +33,21 @@
         <developerConnection>scm:svn:https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk/jaxrs</developerConnection>
         <url>http://resteasy.svn.sourceforge.net/viewvc/resteasy/trunk/jaxrs</url>
     </scm>
+    
+    <repositories>
+		<repository>
+			<id>jboss-releases-repository-mead</id>
+			<name>JBoss Releases Repository Mead</name>
+			<url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-releases-repository-mead-build</id>
+			<name>JBoss Releases Repository Mead Build</name>
+			<url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven</url>
+		</pluginRepository>
+	</pluginRepositories>
 
     <distributionManagement>
         <repository>
