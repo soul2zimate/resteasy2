@@ -15,10 +15,10 @@
 
     <modules>
         <module>jaxb</module>
-<!--        <module>jettison</module>-->
-<!--        <module>fastinfoset</module>-->
+        <module>jettison</module>
+        <module>fastinfoset</module>
 <!--        <module>test-all-jaxb</module>-->
-<!--        <module>jackson</module>-->
+        <module>jackson</module>
 <!--        <module>test-jackson-jaxb-coexistence</module>-->
         <module>resteasy-atom</module>
         <module>multipart</module>
