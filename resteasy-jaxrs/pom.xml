@@ -74,7 +74,6 @@
 		    <dependency>
 		            <groupId>org.apache.httpcomponents</groupId>
 		            <artifactId>httpcore</artifactId>
-		            <version>4.1.4-redhat-1</version>
 		        </dependency>
 
         <!-- 4.0 refactor of apache httpclient -->
