@@ -24,7 +24,7 @@ import java.util.zip.GZIPOutputStream;
 @EncoderPrecedence
 public class GZIPEncodingInterceptor implements MessageBodyWriterInterceptor
 {
-   private static class EndableGZIPOutputStream extends GZIPOutputStream
+   public static class EndableGZIPOutputStream extends GZIPOutputStream
    {
       public EndableGZIPOutputStream(OutputStream os) throws IOException
       {
@@ -70,6 +70,8 @@ public class GZIPEncodingInterceptor implements MessageBodyWriterInterceptor
             throw new RuntimeException(e);
          }
       }
+
+
    }
 
    public void write(MessageBodyWriterContext context) throws IOException, WebApplicationException
@@ -81,6 +83,10 @@ public class GZIPEncodingInterceptor implements MessageBodyWriterInterceptor
          OutputStream old = context.getOutputStream();
          // GZIPOutputStream constructor writes to underlying OS causing headers to be written.
          CommittedGZIPOutputStream gzipOutputStream = new CommittedGZIPOutputStream(old, null);
+
+         // Any content length set will be obsolete
+         context.getHeaders().remove("Content-Length");
+
          context.setOutputStream(gzipOutputStream);
          try
          {
@@ -88,7 +94,7 @@ public class GZIPEncodingInterceptor implements MessageBodyWriterInterceptor
          }
          finally
          {
-            gzipOutputStream.getGzip().finish();
+            if (gzipOutputStream.getGzip() != null) gzipOutputStream.getGzip().finish();
             context.setOutputStream(old);
          }
          return;
