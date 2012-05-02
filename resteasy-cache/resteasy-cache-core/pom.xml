@@ -17,14 +17,10 @@
             <groupId>org.jboss.cache</groupId>
             <artifactId>jbosscache-core</artifactId>
         </dependency>
-        <dependency>
-            <dependency>
-    <groupId>org.jboss.spec.javax.ws.rs</groupId>
+        <dependency>    <groupId>org.jboss.spec.javax.ws.rs</groupId>
     <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
     <version>1.0.0.Final</version>
 </dependency>
-
-        </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>

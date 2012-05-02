@@ -10,20 +10,14 @@
     <name>RESTEasy CDI integration module</name>
     <packaging>jar</packaging>
     <dependencies>
-        <dependency>
-            <dependency>
-    <groupId>org.jboss.spec.javax.ws.rs</groupId>
+        <dependency>    <groupId>org.jboss.spec.javax.ws.rs</groupId>
     <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
-    <version>1.0.0.Final</version>
 </dependency>
-
-        </dependency>
 
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
             <artifactId>jboss-servlet-api_3.0_spec</artifactId>
             <scope>provided</scope>
-            <version>1.0.0.Final</version>
         </dependency>
 
         <dependency>
