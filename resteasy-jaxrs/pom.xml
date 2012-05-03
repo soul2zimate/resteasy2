@@ -14,11 +14,12 @@
     <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
 </dependency>
 
+        <!--
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
             <scope>provided</scope>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
