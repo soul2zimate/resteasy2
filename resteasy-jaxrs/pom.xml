@@ -68,10 +68,6 @@
         </dependency>
 
         <!-- Used for org.jboss.resteasy.plugins.client.httpclient.* -->
-        <dependency>
-            <groupId>commons-httpclient</groupId>
-            <artifactId>commons-httpclient</artifactId>
-        </dependency>
 		    <dependency>
 		            <groupId>org.apache.httpcomponents</groupId>
 		            <artifactId>httpcore</artifactId>
