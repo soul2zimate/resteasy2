@@ -103,22 +103,7 @@
 		<!--     <module>profiling-tests</module> -->
 		<!--     <module>as7-integration-testing</module> -->    
 	</modules>
-	
-	<repositories>
-		<repository>
-			<id>jboss-releases-repository-mead</id>
-			<name>JBoss Releases Repository Mead</name>
-			<url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven/</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>jboss-releases-repository-mead-build</id>
-			<name>JBoss Releases Repository Mead Build</name>
-			<url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven</url>
-		</pluginRepository>
-	</pluginRepositories>
-	
+		
     <dependencyManagement>
         <dependencies>
             <dependency>
