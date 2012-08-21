@@ -5,19 +5,17 @@
     <parent>
         <artifactId>jboss-parent</artifactId>
         <groupId>org.jboss</groupId>
-        <version>8-redhat-1</version>
+        <version>9-redhat-1</version>
     </parent>
     <description>Resteasy</description>
     <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-jaxrs-all</artifactId>
-    <version>2.3.4.Final-redhat-1</version>
+    <version>2.3.4.Final-redhat-2</version>
     <packaging>pom</packaging>
 
     <properties>
         <jboss.home>/Users/billburke/jboss/jboss-4.2.3.GA</jboss.home>
     </properties>
-
-    <url>http://rest-easy.org</url>
 
     <licenses>
         <license>
@@ -26,57 +24,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <scm>
-        <connection>scm:svn:https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk/jaxrs</connection>
-        <developerConnection>scm:svn:https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk/jaxrs</developerConnection>
-        <url>http://resteasy.svn.sourceforge.net/viewvc/resteasy/trunk/jaxrs</url>
-    </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-    <issueManagement>
-        <system>JIRA</system>
-        <url>http://jira.jboss.com/jira/browse/RESTEASY</url>
-    </issueManagement>
-
-    <developers>
-        <developer>
-            <id>rmcdonough</id>
-            <name>Ryan J. McDonough</name>
-            <email>ryan@damnhandy.com</email>
-            <url>http://damnhandy.com</url>
-            <roles>
-                <role>project-owner</role>
-            </roles>
-            <timezone>-5</timezone>
-        </developer>
-        <developer>
-            <id>patriot1burke</id>
-            <name>Bill Burke</name>
-            <email>bill@burkecentral.com</email>
-            <organization>JBoss</organization>
-            <roles>
-                <role>project-owner</role>
-            </roles>
-            <timezone>-5</timezone>
-        </developer>
-    </developers>
-
-    <contributors>
-        <contributor>
-            <name>Heiko Braun</name>
-        </contributor>
-        <contributor>
-            <name>Martin Algesten</name>
-        </contributor>
-    </contributors>
 
     <modules>
 		<!--     <module>tjws</module> -->
@@ -109,14 +56,14 @@
             <dependency>
                 <groupId>org.jboss.component.management</groupId>
                 <artifactId>jboss-dependency-management-all</artifactId>
-                <version>6.0.0-redhat-1</version>
+                <version>6.0.1-redhat-1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.component.management</groupId>
                 <artifactId>jboss-project-dependency-relocations</artifactId>
-                <version>6.0.0-redhat-1</version>
+                <version>6.0.1-redhat-1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
