@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>2.3.4.Final-redhat-2</version>
-	    <relativePath>../../pom.xml</relativePath>
+        <groupId>org.jboss.resteasy</groupId>
+        <version>2.3.4.Final-redhat-1</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>resteasy-atom-provider</artifactId>
-    <packaging>jar</packaging>
-    <name>Resteasy Atom Provider</name>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>resteasy-netty</artifactId>
+    <name>RESTEasy Netty Integration</name>
 
     <dependencies>
         <dependency>
@@ -17,33 +17,34 @@
             <artifactId>resteasy-jaxrs</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jaxb-provider</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_3.0_spec</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-        </dependency>
-        <!--
-        <dependency>
-           <groupId>tjws</groupId>
-           <artifactId>webserver</artifactId>
-           <scope>test</scope>
-        </dependency>
-        -->
     </dependencies>
 
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.component.management</groupId>
+                <artifactId>jboss-dependency-management-all</artifactId>
+                <version>6.0.1-redhat-1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.component.management</groupId>
+                <artifactId>jboss-project-dependency-relocations</artifactId>
+                <version>6.0.1-redhat-1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
