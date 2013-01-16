@@ -1,6 +1,7 @@
 package org.jboss.resteasy.core;
 
 import org.jboss.resteasy.client.core.ClientErrorInterceptor;
+import org.jboss.resteasy.client.exception.mapper.ClientExceptionMapper;
 import org.jboss.resteasy.core.interception.InterceptorRegistry;
 import org.jboss.resteasy.spi.InjectorFactory;
 import org.jboss.resteasy.spi.ProviderFactoryDelegate;
@@ -57,7 +58,7 @@ public class ThreadLocalResteasyProviderFactory extends ResteasyProviderFactory 
    {
       getDelegate().addExceptionMapper(provider, exceptionType);
    }
-
+   
    @Override
    public void addContextResolver(Class<? extends ContextResolver> resolver, boolean builtin)
    {
@@ -164,6 +165,30 @@ public class ThreadLocalResteasyProviderFactory extends ResteasyProviderFactory 
    public void addExceptionMapper(ExceptionMapper provider, Class providerClass)
    {
       getDelegate().addExceptionMapper(provider, providerClass);
+   }
+
+   @Override
+   public void addClientExceptionMapper(Class<? extends ClientExceptionMapper<?>> providerClass)
+   {
+      getDelegate().addClientExceptionMapper(providerClass);
+   }
+
+   @Override
+   public void addClientExceptionMapper(ClientExceptionMapper<?> provider)
+   {
+      getDelegate().addClientExceptionMapper(provider);
+   }
+
+   @Override
+   public void addClientExceptionMapper(ClientExceptionMapper<?> provider, Class<?> providerClass)
+   {
+      getDelegate().addClientExceptionMapper(provider, providerClass);
+   }
+
+   @Override
+   public void addClientExceptionMapper(ClientExceptionMapper<?> provider, Type exceptionType)
+   {
+      getDelegate().addClientExceptionMapper(provider, exceptionType);
    }
 
    @Override
@@ -403,6 +428,12 @@ public class ThreadLocalResteasyProviderFactory extends ResteasyProviderFactory 
    public <T extends Throwable> ExceptionMapper<T> getExceptionMapper(Class<T> type)
    {
       return getDelegate().getExceptionMapper(type);
+   }
+   
+   @Override
+   public <T extends Throwable> ClientExceptionMapper<T> getClientExceptionMapper(Class<T> type)
+   {
+      return getDelegate().getClientExceptionMapper(type);
    }
 
    @Override

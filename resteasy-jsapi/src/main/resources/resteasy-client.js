@@ -1,7 +1,10 @@
 // namespace
 var REST = {
 	apiURL : null,
-	loglevel : 0
+    debug: false,
+	loglevel : 0,
+    antiBrowserCache : false,
+    cacheHeaders : []
 };
 
 // constructor
@@ -26,7 +29,12 @@ REST.Request.prototype = {
 		execute : function(callback){
 			var request = new XMLHttpRequest();
 			var url = this.uri;
-			var restRequest = this;
+
+            if (REST.antiBrowserCache == true) {
+                request.url = url;
+            }
+
+            var restRequest = this;
 			for(var i=0;i<this.matrixParameters.length;i++){
 				url += ";" + REST.Encoding.encodePathParamName(this.matrixParameters[i][0]);
 				url += "=" + REST.Encoding.encodePathParamValue(this.matrixParameters[i][1]);
@@ -112,7 +120,21 @@ REST.Request.prototype = {
 				REST.log("Working around browser readystatechange bug");
 				REST._complete(request, callback);
 			}
-		},
+
+            if (REST.debug == true) { REST.lastRequest = request; }
+
+            if (REST.antiBrowserCache == true && request.status != 304) {
+                var _cachedHeaders = {
+                    "Etag":request.getResponseHeader('Etag'),
+                    "Last-Modified":request.getResponseHeader('Last-Modified'),
+                    "entity":request.responseText
+                };
+
+                var signature = REST._generate_cache_signature(url);
+                REST._remove_deprecated_cache_signature(signature);
+                REST._addToArray(REST.cacheHeaders, signature, _cachedHeaders);
+            }
+        },
 		setAccepts : function(acceptHeader){
 			REST.log("setAccepts("+acceptHeader+")");
 			this.acceptHeader = acceptHeader;
@@ -143,30 +165,64 @@ REST.Request.prototype = {
 		},
 		addCookie : function(name, value){
 			REST.log("addCookie("+name+"="+value+")");
-			this.cookies.push([name, value]);
+            REST._addToArray(this.cookies, name, value);
 		},
 		addQueryParameter : function(name, value){
 			REST.log("addQueryParameter("+name+"="+value+")");
-			this.queryParameters.push([name, value]);
+            REST._addToArray(this.queryParameters, name, value);
 		},
 		addMatrixParameter : function(name, value){
 			REST.log("addMatrixParameter("+name+"="+value+")");
-			this.matrixParameters.push([name, value]);
+            REST._addToArray(this.matrixParameters, name, value);
 		},
 		addFormParameter : function(name, value){
 			REST.log("addFormParameter("+name+"="+value+")");
-			this.formParameters.push([name, value]);
+            REST._addToArray(this.formParameters, name, value);
 		},
 		addHeader : function(name, value){
 			REST.log("addHeader("+name+"="+value+")");
-			this.headers.push([name, value]);
+            REST._addToArray(this.headers, name, value);
 		}
-}
+};
 
-REST.log = function(string){
-	if(REST.loglevel > 0)
-		print(string);
-}
+REST.log = function (string) {
+    if (REST.loglevel > 0)
+        print(string);
+};
+
+REST._addToArray = function (array, name, value) {
+    if (value instanceof Array) {
+        for (var i = 0; i < value.length; i++) {
+            array.push([name, value[i]]);
+        }
+    } else {
+        array.push([name, value]);
+    }
+};
+
+REST._generate_cache_signature = function (url) {
+    return url.replace(/\?resteasy_jsapi_anti_cache=\d+/, '');
+};
+
+REST._remove_deprecated_cache_signature = function (signature) {
+    for (idx in REST.cacheHeaders) {
+        var _signature = REST.cacheHeaders[idx][0];
+        if (signature == _signature) {
+            REST.cacheHeaders.splice(idx, 1);
+        }
+    }
+
+};
+
+REST._get_cache_signature = function (signature) {
+    for (idx in REST.cacheHeaders) {
+        var _signature = REST.cacheHeaders[idx][0];
+        if (signature == _signature) {
+            return REST.cacheHeaders[idx];
+        }
+    }
+    return null;
+};
 
 REST._complete = function(request, callback){
 	REST.log("Request ready state: "+request.readyState);
@@ -186,7 +242,11 @@ REST._complete = function(request, callback){
 			}else
 				entity = request.responseText;
 		}
-		REST.log("Calling callback with: "+entity);
+
+        if (request.status == 304) {
+            entity = REST._get_cache_signature(REST._generate_cache_signature(request.url))[1]['entity'];
+        }
+        REST.log("Calling callback with: "+entity);
 		callback(request.status, request, entity);
 	}
 }
