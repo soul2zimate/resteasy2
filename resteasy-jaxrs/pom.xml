@@ -11,9 +11,9 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-			<groupId>org.jboss.spec.javax.servlet</groupId>
-			<artifactId>jboss-servlet-api_3.0_spec</artifactId>            
-			<scope>provided</scope>
+          <groupId>org.jboss.spec.javax.servlet</groupId>
+	  <artifactId>jboss-servlet-api_3.0_spec</artifactId>            
+	  <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -69,14 +69,19 @@
 
 
         <!-- 4.0 refactor of apache httpclient -->
-         <dependency>
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-		</dependency>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpcore</artifactId>
+	</dependency>
 		
         <dependency>
             <groupId>commons-io</groupId>
-	        <artifactId>commons-io</artifactId>
+            <artifactId>commons-io</artifactId>
         </dependency>
 
         <dependency>
