@@ -46,9 +46,9 @@
            detected runtime?
         -->
         <dependency>
-			            <groupId>org.jboss.spec.javax.annotation</groupId>
-			            <artifactId>jboss-annotations-api_1.1_spec</artifactId>        
-		</dependency>
+           <groupId>org.jboss.spec.javax.annotation</groupId>
+           <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+        </dependency>
 
         <!-- javax.activation.DataSource provider is required by spec -->
         <dependency>
@@ -65,27 +65,26 @@
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
-	    <scope>provided</scope>
+            <scope>provided</scope>
         </dependency>
-
 
         <!-- 4.0 refactor of apache httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <exclusions>
-	      <exclusion>
-		<groupId>commons-logging</groupId>
-		<artifactId>commons-logging</artifactId>
-	      </exclusion>
-	    <exclusions>
-	</dependency>
+               <exclusion>
+                  <groupId>commons-logging</groupId>
+                  <artifactId>commons-logging</artifactId>
+               </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <dependency>
+           <groupId>org.apache.httpcomponents</groupId>
+           <artifactId>httpcore</artifactId>
+        </dependency>
 
-	<dependency>
-		<groupId>org.apache.httpcomponents</groupId>
-		<artifactId>httpcore</artifactId>
-	</dependency>
-		
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
