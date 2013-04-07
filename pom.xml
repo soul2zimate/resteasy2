@@ -5,12 +5,12 @@
     <parent>
         <artifactId>jboss-parent</artifactId>
         <groupId>org.jboss</groupId>
-        <version>9-redhat-1</version>
+        <version>10-redhat-1</version>
     </parent>
     <description>Resteasy</description>
     <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-jaxrs-all</artifactId>
-    <version>2.3.5.Final-redhat-1</version>
+    <version>2.3.6.Final-redhat-1</version>
     <packaging>pom</packaging>
 
     <licenses>
@@ -20,6 +20,21 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+	<repositories>
+	        <repository>
+	                <id>jboss-releases-repository-mead</id>
+	                <name>JBoss Releases Repository Mead</name>
+	                <url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven/</url>
+	        </repository>
+	</repositories>
+	<pluginRepositories>
+	        <pluginRepository>
+	                <id>jboss-releases-repository-mead-build</id>
+	                <name>JBoss Releases Repository Mead Build</name>
+	                <url>http://download.devel.redhat.com/brewroot/repos/jb-eap-6-rhel-6-build/latest/maven</url>
+	        </pluginRepository>
+	</pluginRepositories>
 
     <modules>
 
@@ -59,13 +74,6 @@
             <dependency>
                 <groupId>org.jboss.component.management</groupId>
                 <artifactId>jboss-dependency-management-all</artifactId>
-                <version>6.1.0-redhat-1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.component.management</groupId>
-                <artifactId>jboss-project-dependency-relocations</artifactId>
                 <version>6.1.0-redhat-1</version>
                 <type>pom</type>
                 <scope>import</scope>

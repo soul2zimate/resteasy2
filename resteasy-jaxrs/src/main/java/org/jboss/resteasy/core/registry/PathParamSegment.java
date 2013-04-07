@@ -80,11 +80,11 @@ public class PathParamSegment extends Segment implements Comparable<PathParamSeg
       // if the grouping characters in the range block ignore them.
       int idxOpen = regex.indexOf('[');
       if (idxOpen != -1) {
-    	  int idxClose = regex.indexOf(']', idxOpen);
-    	  if (idxClose != -1) {
-    		  regex = regex.substring(0, idxOpen) + regex.substring(idxClose+1);
-    	  }
-      }      
+          int idxClose = regex.indexOf(']', idxOpen);
+          if (idxClose != -1) {
+            regex = regex.substring(0, idxOpen) + regex.substring(idxClose+1);
+          }
+      } 
       Matcher matcher = GROUP.matcher(regex);
       int groupCount = 0;
       while (matcher.find()) groupCount++;

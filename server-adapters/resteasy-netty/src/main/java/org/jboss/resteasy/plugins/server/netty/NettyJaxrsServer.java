@@ -3,6 +3,8 @@ package org.jboss.resteasy.plugins.server.netty;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelPipelineFactory;
+import org.jboss.netty.channel.group.ChannelGroup;
+import org.jboss.netty.channel.group.DefaultChannelGroup;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.handler.execution.ExecutionHandler;
 import org.jboss.netty.handler.execution.OrderedMemoryAwareThreadPoolExecutor;
@@ -38,6 +40,8 @@ public class NettyJaxrsServer implements EmbeddedJaxrsServer
    private int executorThreadCount = 16;
    private SSLContext sslContext;
    private int maxRequestSize = 1024 * 1024 * 10;
+
+   static final ChannelGroup allChannels = new DefaultChannelGroup("NettyJaxrsServer");
 
    public void setSSLContext(SSLContext sslContext) 
    {
@@ -119,7 +123,7 @@ public class NettyJaxrsServer implements EmbeddedJaxrsServer
       RequestDispatcher dispatcher = new RequestDispatcher((SynchronousDispatcher)deployment.getDispatcher(), deployment.getProviderFactory(), domain);
 
       // Configure the server.
-      ServerBootstrap bootstrap = new ServerBootstrap(
+      bootstrap = new ServerBootstrap(
               new NioServerSocketChannelFactory(
                       Executors.newCachedThreadPool(),
                       Executors.newCachedThreadPool(), 
@@ -136,13 +140,16 @@ public class NettyJaxrsServer implements EmbeddedJaxrsServer
 
       // Bind and start to accept incoming connections.
       channel = bootstrap.bind(new InetSocketAddress(port));
+      allChannels.add(channel);
    }
 
    @Override
    public void stop()
    {
-      channel.close().awaitUninterruptibly();
-      bootstrap.releaseExternalResources();
+      allChannels.close().awaitUninterruptibly();
+      if (bootstrap != null) {
+          bootstrap.releaseExternalResources();
+      }
       deployment.stop();
    }
 }
