@@ -78,7 +78,7 @@
         <module>resteasy-jaxrs</module>
         <module>providers</module>
         <module>resteasy-bom</module>
-        <module>resteasy-cache</module>
+        <!-- <module>resteasy-cache</module> -->
         <module>resteasy-guice</module>
         <module>resteasy-links</module>
         <module>resteasy-jsapi</module>
@@ -126,11 +126,20 @@
                 <version>3.8.0.GA</version>
             </dependency>
 
+<!-- 
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>jsr250-api</artifactId>
                 <version>1.0</version>
             </dependency>
+ -->
+
+            <dependency>
+                <groupId>org.jboss.spec.javax.annotation</groupId>
+                <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+                <version>1.0.0.Final</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.sun.xml.bind</groupId>
