@@ -126,10 +126,16 @@
            should this dependency be <scope>provided</scope> and only used if
            detected runtime?
         -->
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>jsr250-api</artifactId>
-        </dependency>
+        <!-- <dependency>
+                   <groupId>javax.annotation</groupId>
+                   <artifactId>jsr250-api</artifactId>
+               </dependency> -->
+
+			      <dependency>
+		                <groupId>org.jboss.spec.javax.annotation</groupId>
+		                <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+		                <version>1.0.0.Final</version>
+		            </dependency>
 
         <!-- javax.activation.DataSource provider is required by spec -->
         <dependency>
@@ -146,12 +152,12 @@
         </dependency>
 
         <!-- Used by org.jboss.resteasy.plugins.server.tjws.* -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency> -->
         <!--
         <dependency>
            <groupId>tjws</groupId>
