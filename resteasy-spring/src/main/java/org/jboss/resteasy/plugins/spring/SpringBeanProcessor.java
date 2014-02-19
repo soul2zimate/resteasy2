@@ -1,5 +1,17 @@
 package org.jboss.resteasy.plugins.spring;
 
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.ws.rs.ext.MessageBodyReader;
+import javax.ws.rs.ext.MessageBodyWriter;
+import javax.ws.rs.ext.Provider;
+
 import org.jboss.resteasy.core.Dispatcher;
 import org.jboss.resteasy.spi.HttpRequest;
 import org.jboss.resteasy.spi.HttpResponse;
@@ -17,22 +29,10 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.RootBeanDefinition;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.SmartApplicationListener;
 import org.springframework.util.ClassUtils;
-
-import javax.ws.rs.ext.MessageBodyReader;
-import javax.ws.rs.ext.MessageBodyWriter;
-import javax.ws.rs.ext.Provider;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * <p>
@@ -63,7 +63,7 @@ import java.util.Set;
  * @author <a href="mailto:bill@burkecentral.com">Bill Burke</a>
  * @version $Revision: 1 $
  */
-public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartApplicationListener
+public class SpringBeanProcessor implements BeanFactoryPostProcessor, ApplicationListener
 {
    protected Registry registry;
    protected ResteasyProviderFactory providerFactory;
@@ -75,14 +75,15 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
 
    protected class ResteasyBeanPostProcessor implements BeanPostProcessor
    {
-      private ConfigurableListableBeanFactory beanFactory;
+      private final ConfigurableListableBeanFactory beanFactory;
 
       protected ResteasyBeanPostProcessor(ConfigurableListableBeanFactory beanFactory)
       {
          this.beanFactory = beanFactory;
       }
 
-      public Object postProcessBeforeInitialization(Object bean, String beanName)
+      @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName)
               throws BeansException
       {
          return bean;
@@ -108,7 +109,8 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
        *
        * @see SpringBeanProcessor.postProcessBeanFactory
        */
-      public Object postProcessAfterInitialization(Object bean, String beanName)
+      @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName)
               throws BeansException
       {
          if (providerNames.contains(beanName))
@@ -122,7 +124,7 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
          SpringResourceFactory resourceFactory = resourceFactories.get(beanName);
          if (resourceFactory != null)
          {
-            inject(beanName, bean, getInjector((Class<?>) resourceFactory.getScannableClass()));
+            inject(beanName, bean, getInjector(resourceFactory.getScannableClass()));
          }
 
          return bean;
@@ -228,7 +230,8 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
     * "depends-on" the @Providers.
     * </p>
     */
-   public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
+   @Override
+public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
            throws BeansException
    {
       beanFactory.registerResolvableDependency(Registry.class, getRegistry());
@@ -440,11 +443,13 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
    @Override
    public void onApplicationEvent(ApplicationEvent event)
    {
+      if (event.getClass() != ContextRefreshedEvent.class)
+         return;
       for (SpringResourceFactory resourceFactory : resourceFactories.values())
       {
          getRegistry().removeRegistrations(resourceFactory.getScannableClass());
       }
-      
+
 //  The following code would reprocess the bean factory, in case the configuration changed.
 //  However, it needs work.
 //      if (event.getSource() instanceof XmlWebApplicationContext)
@@ -458,7 +463,6 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
       }
    }
 
-   @Override
    public int getOrder()
    {
       return this.order;
@@ -468,7 +472,7 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
    {
       this.order = order;
    }
-
+/*
    @Override
    public boolean supportsEventType(Class<? extends ApplicationEvent> eventType)
    {
@@ -480,4 +484,5 @@ public class SpringBeanProcessor implements BeanFactoryPostProcessor, SmartAppli
    {
       return ApplicationContext.class.isAssignableFrom(sourceType);
    }
+   */
 }

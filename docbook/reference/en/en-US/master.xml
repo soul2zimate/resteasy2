@@ -58,7 +58,7 @@
    <bookinfo>
       <title>RESTEasy JAX-RS</title>
       <subtitle>RESTFul Web Services for Java</subtitle>
-      <releaseinfo>2.3.7.Final</releaseinfo>
+      <releaseinfo>2.3.8.Final-redhat-SNAPSHOT</releaseinfo>
    </bookinfo>
 
    <toc/>

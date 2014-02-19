@@ -52,7 +52,7 @@
 					<tr>
 						<td>org.jboss.resteasy</td>
 						<td>resteasy-links</td>
-						<td>2.3.7.Final</td>
+						<td>2.3.8.Final-redhat-SNAPSHOT</td>
 					</tr>
 				</tbody>
 			</table>
