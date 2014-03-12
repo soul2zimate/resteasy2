@@ -88,6 +88,8 @@
         <module>resteasy-spring</module>
         <module>async-http-servlet-3.0</module>
         <module>tjws</module>
+        <module>eagledns</module>
+        <module>security</module>
         <module>resteasy-test-tjws</module>
         <module>resteasy-test-tjws-spring</module>
     </modules>
