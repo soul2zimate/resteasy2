@@ -3,9 +3,6 @@
  */
 package org.jboss.resteasy.plugins.providers;
 
-import org.jboss.resteasy.util.NoContent;
-
-import javax.xml.transform.stream.StreamSource;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -193,7 +190,6 @@ public class DataSourceProvider extends AbstractEntityProvider<DataSource>
                               MultivaluedMap<String, String> httpHeaders,
                               InputStream entityStream) throws IOException
    {
-      if (NoContent.isContentLengthZero(httpHeaders)) return readDataSource(new ByteArrayInputStream(new byte[0]), mediaType);
       return readDataSource(entityStream, mediaType);
    }
 
