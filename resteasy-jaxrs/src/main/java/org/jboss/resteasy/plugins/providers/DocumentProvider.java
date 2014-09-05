@@ -49,11 +49,11 @@ public class DocumentProvider extends AbstractEntityProvider<Document>
       try
       {
          String s = config.getParameter(ResteasyContextParameters.RESTEASY_EXPAND_ENTITY_REFERENCES);
-         expandEntityReferences = (s == null ? true : Boolean.parseBoolean(s));
+         expandEntityReferences = (s == null ? false : Boolean.parseBoolean(s));
       }
       catch (Exception e)
       {
-         logger.debug("Unable to retrieve config: expandEntityReferences defaults to true");
+         logger.debug("Unable to retrieve config: expandEntityReferences defaults to false");
       }
    }
 
