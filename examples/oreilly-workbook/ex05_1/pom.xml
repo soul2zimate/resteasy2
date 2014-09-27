@@ -25,7 +25,7 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>2.3.8.SP2-redhat-SNAPSHOT</version>
+            <version>2.3.8.SP3-redhat-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
