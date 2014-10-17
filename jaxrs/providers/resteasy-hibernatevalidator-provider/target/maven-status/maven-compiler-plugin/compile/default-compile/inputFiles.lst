@@ -1,0 +1,10 @@
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/AbstractValidatorContextResolver.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/api/validation/ResteasyViolationExceptionMapper.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/ValidateRequest.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/ValidatorContextResolver.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/api/validation/ResteasyViolationException.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/api/validation/ViolationReport.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/DoNotValidateRequest.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/GeneralValidatorImpl.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/ConstraintTypeUtil10.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-hibernatevalidator-provider/src/main/java/org/jboss/resteasy/plugins/validation/hibernate/ValidatorContextResolverCDI.java

@@ -1,0 +1,3 @@
+org/jboss/resteasy/annotations/providers/NoJackson.class
+org/jboss/resteasy/plugins/providers/jackson/JacksonJsonpInterceptor.class
+org/jboss/resteasy/plugins/providers/jackson/ResteasyJacksonProvider.class

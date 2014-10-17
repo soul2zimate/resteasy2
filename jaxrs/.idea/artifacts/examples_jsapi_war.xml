@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="examples-jsapi:war">
+    <output-path>$PROJECT_DIR$/examples/examples-jsapi/target</output-path>
+    <root id="archive" name="examples-jsapi.war">
+      <element id="artifact" artifact-name="examples-jsapi:war exploded" />
+    </root>
+  </artifact>
+</component>

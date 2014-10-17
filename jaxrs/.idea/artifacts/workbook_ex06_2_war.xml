@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="workbook-ex06_2:war">
+    <output-path>$PROJECT_DIR$/examples/oreilly-workbook/ex06_2/target</output-path>
+    <root id="archive" name="workbook-ex06_2-1.0.war">
+      <element id="artifact" artifact-name="workbook-ex06_2:war exploded" />
+    </root>
+  </artifact>
+</component>

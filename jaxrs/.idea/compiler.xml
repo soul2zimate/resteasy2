@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.xml" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.jpg" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.ftl" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="async-http-servlet-3.0" />
+        <module name="async-http-servlet-3.0-test" />
+        <module name="async-pubsub-example" />
+        <module name="callback-tests" />
+        <module name="client-token-grant-example" />
+        <module name="customer-portal-example" />
+        <module name="database-service" />
+        <module name="doseta-no-dns-example" />
+        <module name="doseta-use-dns-example" />
+        <module name="examples-async-job-service" />
+        <module name="examples-guice-hello" />
+        <module name="examples-jaxb-json" />
+        <module name="examples-jsapi" />
+        <module name="examples-oauth" />
+        <module name="examples-oauth-authenticator" />
+        <module name="examples-oauth-no-filter" />
+        <module name="examples-oauth-provider" />
+        <module name="examples-oauth-push-messaging" />
+        <module name="examples-oauth-push-messaging-openid-provider" />
+        <module name="examples-oauth-push-messaging-sso" />
+        <module name="examples-resteasy-springMVC" />
+        <module name="jaxrs-2.0-workbook-ex03_1" />
+        <module name="jaxrs-2.0-workbook-ex04_1" />
+        <module name="jaxrs-2.0-workbook-ex04_2" />
+        <module name="jaxrs-2.0-workbook-ex04_3" />
+        <module name="jaxrs-2.0-workbook-ex05_1" />
+        <module name="jaxrs-2.0-workbook-ex05_2" />
+        <module name="jaxrs-2.0-workbook-ex06_1" />
+        <module name="jaxrs-2.0-workbook-ex06_2" />
+        <module name="jaxrs-2.0-workbook-ex07_1" />
+        <module name="jaxrs-2.0-workbook-ex09_1" />
+        <module name="jaxrs-2.0-workbook-ex09_2" />
+        <module name="jaxrs-2.0-workbook-ex10_1" />
+        <module name="jaxrs-2.0-workbook-ex10_2" />
+        <module name="jaxrs-2.0-workbook-ex11_1" />
+        <module name="jaxrs-2.0-workbook-ex12_1" />
+        <module name="jaxrs-2.0-workbook-ex12_2" />
+        <module name="jaxrs-2.0-workbook-ex13_1" />
+        <module name="jaxrs-2.0-workbook-ex14_2" />
+        <module name="jaxrs-2.0-workbook-ex15_1" />
+        <module name="jaxrs-2.0-workbook-ex15_2" />
+        <module name="jaxrs-api" />
+        <module name="jboss-auth-server" />
+        <module name="jose-jwt" />
+        <module name="login-module-authenticator" />
+        <module name="oauth-client-example" />
+        <module name="product-portal-example" />
+        <module name="profiling-tests" />
+        <module name="resteasy-atom-provider" />
+        <module name="resteasy-cache-core" />
+        <module name="resteasy-cdi" />
+        <module name="resteasy-client" />
+        <module name="resteasy-crypto" />
+        <module name="resteasy-fastinfoset-provider" />
+        <module name="resteasy-guice" />
+        <module name="resteasy-hibernatevalidator-provider" />
+        <module name="resteasy-html" />
+        <module name="resteasy-jackson-provider" />
+        <module name="resteasy-jackson2-provider" />
+        <module name="resteasy-jaxb-provider" />
+        <module name="resteasy-jaxrs" />
+        <module name="resteasy-jaxrs-testsuite" />
+        <module name="resteasy-jdk-http" />
+        <module name="resteasy-jettison-provider" />
+        <module name="resteasy-jsapi" />
+        <module name="resteasy-json-p-provider" />
+        <module name="resteasy-keystone-as7" />
+        <module name="resteasy-keystone-core" />
+        <module name="resteasy-links" />
+        <module name="resteasy-multipart-provider" />
+        <module name="resteasy-netty" />
+        <module name="resteasy-netty4" />
+        <module name="resteasy-netty4-cdi" />
+        <module name="resteasy-oauth" />
+        <module name="resteasy-servlet-initializer" />
+        <module name="resteasy-spring" />
+        <module name="resteasy-test-data" />
+        <module name="resteasy-undertow" />
+        <module name="resteasy-validator-provider-11" />
+        <module name="resteasy-yaml-provider" />
+        <module name="server-async-http" />
+        <module name="simple-jaxrs2-client" />
+        <module name="skeleton-key-as7" />
+        <module name="skeleton-key-core" />
+        <module name="skeleton-key-idp" />
+        <module name="skeleton-key-idp-war" />
+        <module name="smime-example" />
+        <module name="test-all-jaxb" />
+        <module name="test-application-war" />
+        <module name="test-client-typevar-war" />
+        <module name="test-context-war" />
+        <module name="test-encoding-war" />
+        <module name="test-filter-war" />
+        <module name="test-jackson-jaxb-coexistence" />
+        <module name="test-oauth-servlet-war" />
+        <module name="test-resteasy-html" />
+        <module name="tjws" />
+        <module name="workbook-ex03_1" />
+        <module name="workbook-ex04_1" />
+        <module name="workbook-ex04_2" />
+        <module name="workbook-ex04_3" />
+        <module name="workbook-ex05_1" />
+        <module name="workbook-ex05_2" />
+        <module name="workbook-ex06_1" />
+        <module name="workbook-ex06_2" />
+        <module name="workbook-ex07_1" />
+        <module name="workbook-ex08_1" />
+        <module name="workbook-ex08_2" />
+        <module name="workbook-ex09_1" />
+        <module name="workbook-ex09_2" />
+        <module name="workbook-ex10_1" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="async-http-servlet-3.0" target="1.6" />
+      <module name="async-http-servlet-3.0-test" target="1.6" />
+      <module name="async-pubsub-example" target="1.6" />
+      <module name="callback-tests" target="1.6" />
+      <module name="client-token-grant-example" target="1.6" />
+      <module name="customer-portal-example" target="1.6" />
+      <module name="database-service" target="1.6" />
+      <module name="doseta-no-dns-example" target="1.6" />
+      <module name="doseta-use-dns-example" target="1.6" />
+      <module name="examples-async-job-service" target="1.6" />
+      <module name="examples-guice-hello" target="1.6" />
+      <module name="examples-jaxb-json" target="1.6" />
+      <module name="examples-jsapi" target="1.6" />
+      <module name="examples-oauth" target="1.6" />
+      <module name="examples-oauth-authenticator" target="1.6" />
+      <module name="examples-oauth-no-filter" target="1.6" />
+      <module name="examples-oauth-provider" target="1.6" />
+      <module name="examples-oauth-push-messaging" target="1.6" />
+      <module name="examples-oauth-push-messaging-openid-provider" target="1.6" />
+      <module name="examples-oauth-push-messaging-sso" target="1.6" />
+      <module name="examples-resteasy-springMVC" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex03_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex04_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex04_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex04_3" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex05_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex05_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex06_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex06_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex07_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex09_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex09_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex10_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex10_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex11_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex12_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex12_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex13_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex14_2" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex15_1" target="1.6" />
+      <module name="jaxrs-2.0-workbook-ex15_2" target="1.6" />
+      <module name="jaxrs-api" target="1.6" />
+      <module name="jboss-auth-server" target="1.6" />
+      <module name="jose-jwt" target="1.6" />
+      <module name="login-module-authenticator" target="1.6" />
+      <module name="oauth-client-example" target="1.6" />
+      <module name="product-portal-example" target="1.6" />
+      <module name="profiling-tests" target="1.6" />
+      <module name="resteasy-atom-provider" target="1.6" />
+      <module name="resteasy-cache-core" target="1.6" />
+      <module name="resteasy-cdi" target="1.6" />
+      <module name="resteasy-client" target="1.6" />
+      <module name="resteasy-crypto" target="1.6" />
+      <module name="resteasy-fastinfoset-provider" target="1.6" />
+      <module name="resteasy-guice" target="1.6" />
+      <module name="resteasy-hibernatevalidator-provider" target="1.6" />
+      <module name="resteasy-html" target="1.6" />
+      <module name="resteasy-jackson-provider" target="1.6" />
+      <module name="resteasy-jackson2-provider" target="1.6" />
+      <module name="resteasy-jaxb-provider" target="1.6" />
+      <module name="resteasy-jaxrs" target="1.6" />
+      <module name="resteasy-jaxrs-testsuite" target="1.6" />
+      <module name="resteasy-jdk-http" target="1.6" />
+      <module name="resteasy-jettison-provider" target="1.6" />
+      <module name="resteasy-jsapi" target="1.6" />
+      <module name="resteasy-json-p-provider" target="1.6" />
+      <module name="resteasy-keystone-as7" target="1.6" />
+      <module name="resteasy-keystone-core" target="1.6" />
+      <module name="resteasy-links" target="1.6" />
+      <module name="resteasy-multipart-provider" target="1.6" />
+      <module name="resteasy-netty" target="1.6" />
+      <module name="resteasy-netty4" target="1.6" />
+      <module name="resteasy-netty4-cdi" target="1.6" />
+      <module name="resteasy-oauth" target="1.6" />
+      <module name="resteasy-servlet-initializer" target="1.6" />
+      <module name="resteasy-spring" target="1.6" />
+      <module name="resteasy-test-data" target="1.6" />
+      <module name="resteasy-undertow" target="1.6" />
+      <module name="resteasy-validator-provider-11" target="1.6" />
+      <module name="resteasy-yaml-provider" target="1.6" />
+      <module name="server-async-http" target="1.6" />
+      <module name="simple-jaxrs2-client" target="1.6" />
+      <module name="skeleton-key-as7" target="1.6" />
+      <module name="skeleton-key-core" target="1.6" />
+      <module name="skeleton-key-idp" target="1.6" />
+      <module name="skeleton-key-idp-war" target="1.6" />
+      <module name="smime-example" target="1.6" />
+      <module name="test-all-jaxb" target="1.6" />
+      <module name="test-application-war" target="1.6" />
+      <module name="test-client-typevar-war" target="1.6" />
+      <module name="test-context-war" target="1.6" />
+      <module name="test-encoding-war" target="1.6" />
+      <module name="test-filter-war" target="1.6" />
+      <module name="test-jackson-jaxb-coexistence" target="1.6" />
+      <module name="test-oauth-servlet-war" target="1.6" />
+      <module name="test-resteasy-html" target="1.6" />
+      <module name="tjws" target="1.6" />
+      <module name="workbook-ex03_1" target="1.6" />
+      <module name="workbook-ex04_1" target="1.6" />
+      <module name="workbook-ex04_2" target="1.6" />
+      <module name="workbook-ex04_3" target="1.6" />
+      <module name="workbook-ex05_1" target="1.6" />
+      <module name="workbook-ex05_2" target="1.6" />
+      <module name="workbook-ex06_1" target="1.6" />
+      <module name="workbook-ex06_2" target="1.6" />
+      <module name="workbook-ex07_1" target="1.6" />
+      <module name="workbook-ex08_1" target="1.6" />
+      <module name="workbook-ex08_2" target="1.6" />
+      <module name="workbook-ex09_1" target="1.6" />
+      <module name="workbook-ex09_2" target="1.6" />
+      <module name="workbook-ex10_1" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
+

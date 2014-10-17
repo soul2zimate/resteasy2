@@ -1,0 +1,9 @@
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/ext/RequestScopeModule.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/ModuleProcessor.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/ext/UriBuilderProvider.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/GuiceResourceFactory.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/ext/ResponseBuilderProvider.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/ext/JaxrsModule.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/ext/VariantListBuilderProvider.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/GuiceResteasyBootstrapServletContextListener.java
+/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/resteasy-guice/src/main/java/org/jboss/resteasy/plugins/guice/RequestScoped.java

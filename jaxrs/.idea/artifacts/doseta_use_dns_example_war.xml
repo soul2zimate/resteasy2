@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="doseta-use-dns-example:war">
+    <output-path>$PROJECT_DIR$/examples/digital-signatures/use-dns/target</output-path>
+    <root id="archive" name="content-signature-example.war">
+      <element id="artifact" artifact-name="doseta-use-dns-example:war exploded" />
+    </root>
+  </artifact>
+</component>

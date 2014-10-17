@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oauth-client-example:war">
+    <output-path>$PROJECT_DIR$/examples/oauth2-as7-example/wars/third-party/target</output-path>
+    <root id="archive" name="oauth-client.war">
+      <element id="artifact" artifact-name="oauth-client-example:war exploded" />
+    </root>
+  </artifact>
+</component>

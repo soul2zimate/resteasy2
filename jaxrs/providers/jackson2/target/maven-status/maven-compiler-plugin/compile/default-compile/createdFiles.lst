@@ -1,0 +1,6 @@
+org/jboss/resteasy/annotations/providers/jackson/Formatted.class
+org/jboss/resteasy/plugins/providers/jackson/ResteasyJackson2Provider$ClassAnnotationKey.class
+org/jboss/resteasy/plugins/providers/jackson/Jackson2JsonpInterceptor.class
+org/jboss/resteasy/plugins/providers/jackson/ResteasyJackson2Provider$1.class
+org/jboss/resteasy/plugins/providers/jackson/ResteasyJackson2Provider.class
+org/jboss/resteasy/annotations/providers/NoJackson.class

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="examples-oauth-push-messaging-openid-provider:war">
+    <output-path>$PROJECT_DIR$/examples/oauth1-examples/oauth-push-messaging-openid/openid/target</output-path>
+    <root id="archive" name="provider-servlet.war">
+      <element id="artifact" artifact-name="examples-oauth-push-messaging-openid-provider:war exploded" />
+    </root>
+  </artifact>
+</component>

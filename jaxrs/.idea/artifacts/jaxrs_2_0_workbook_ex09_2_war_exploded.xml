@@ -1,0 +1,56 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jaxrs-2.0-workbook-ex09_2:war exploded">
+    <output-path>$PROJECT_DIR$/examples/oreilly-jaxrs-2.0-workbook/ex09_2/target/ex09_2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="jaxrs-2.0-workbook-ex09_2/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jaxrs-2.0-workbook-ex09_2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="resteasy-jaxrs-3.0.8.Final.jar">
+            <element id="module-output" name="resteasy-jaxrs" />
+          </element>
+          <element id="archive" name="jaxrs-api-3.0.8.Final.jar">
+            <element id="module-output" name="jaxrs-api" />
+          </element>
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.Final" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.2.1" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.6" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.1" />
+          <element id="library" level="project" name="Maven: net.jcip:jcip-annotations:1.0" />
+          <element id="archive" name="resteasy-client-3.0.8.Final.jar">
+            <element id="module-output" name="resteasy-client" />
+          </element>
+          <element id="archive" name="async-http-servlet-3.0-3.0.8.Final.jar">
+            <element id="module-output" name="async-http-servlet-3.0" />
+          </element>
+          <element id="archive" name="resteasy-servlet-initializer-3.0.8.Final.jar">
+            <element id="module-output" name="resteasy-servlet-initializer" />
+          </element>
+          <element id="archive" name="resteasy-jaxb-provider-3.0.8.Final.jar">
+            <element id="module-output" name="resteasy-jaxb-provider" />
+          </element>
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.7" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.2.7" />
+          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.2.7" />
+          <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:2.16" />
+          <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.12" />
+          <element id="library" level="project" name="Maven: javax.xml.bind:jsr173_api:1.0" />
+          <element id="archive" name="resteasy-jackson2-provider-3.0.8.Final.jar">
+            <element id="module-output" name="resteasy-jackson2-provider" />
+          </element>
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.3.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.3.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.3.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,12 @@
+org/jboss/resteasy/plugins/guice/ext/RequestScopeModule.class
+org/jboss/resteasy/plugins/guice/ext/ResponseBuilderProvider.class
+org/jboss/resteasy/plugins/guice/ext/RequestScopeModule$1.class
+org/jboss/resteasy/plugins/guice/ModuleProcessor.class
+org/jboss/resteasy/plugins/guice/ext/VariantListBuilderProvider.class
+org/jboss/resteasy/plugins/guice/ext/RequestScopeModule$ResteasyContextProvider.class
+org/jboss/resteasy/plugins/guice/ext/JaxrsModule.class
+org/jboss/resteasy/plugins/guice/GuiceResteasyBootstrapServletContextListener.class
+org/jboss/resteasy/plugins/guice/RequestScoped.class
+org/jboss/resteasy/plugins/guice/ext/RequestScopeModule$1$1.class
+org/jboss/resteasy/plugins/guice/GuiceResourceFactory.class
+org/jboss/resteasy/plugins/guice/ext/UriBuilderProvider.class

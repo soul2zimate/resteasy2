@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="server-async-http:war">
+    <output-path>$PROJECT_DIR$/examples/jaxrs-2.0/server-async-http/target</output-path>
+    <root id="archive" name="chat.war">
+      <element id="artifact" artifact-name="server-async-http:war exploded" />
+    </root>
+  </artifact>
+</component>

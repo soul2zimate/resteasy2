@@ -22,6 +22,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.Provider;
 
+import org.jboss.resteasy.resteasy_jaxrs.i18n.Messages;
+
 /**
  * @author <a href="mailto:ryan@damnhandy.com">Ryan J. McDonough</a>
  * @version $Revision:$
@@ -106,7 +108,7 @@ public class DataSourceProvider extends AbstractEntityProvider<DataSource>
       @Override
       public OutputStream getOutputStream() throws IOException
       {
-         throw new IOException("No output stream allowed");
+         throw new IOException(Messages.MESSAGES.noOutputStreamAllowed());
       }
 
    }
@@ -157,7 +159,7 @@ public class DataSourceProvider extends AbstractEntityProvider<DataSource>
     * @param genericType
     * @param annotations
     * @return
-    * @see javax.ws.rs.ext.MessageBodyReader
+    * @see javax.ws.rs.ext.MessageBodyReader#isReadable(java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[])
     */
    @Override
    public boolean isReadable(Class<?> type,
@@ -190,6 +192,7 @@ public class DataSourceProvider extends AbstractEntityProvider<DataSource>
                               MultivaluedMap<String, String> httpHeaders,
                               InputStream entityStream) throws IOException
    {
+
       return readDataSource(entityStream, mediaType);
    }
 

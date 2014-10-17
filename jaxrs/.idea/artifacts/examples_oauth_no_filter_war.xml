@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="examples-oauth-no-filter:war">
+    <output-path>$PROJECT_DIR$/examples/oauth1-examples/oauth-catalina-authenticator/oauth/target</output-path>
+    <root id="archive" name="examples-oauth.war">
+      <element id="artifact" artifact-name="examples-oauth-no-filter:war exploded" />
+    </root>
+  </artifact>
+</component>

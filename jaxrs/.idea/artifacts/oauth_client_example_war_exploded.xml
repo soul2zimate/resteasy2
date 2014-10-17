@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="oauth-client-example:war exploded">
+    <output-path>$PROJECT_DIR$/examples/oauth2-as7-example/wars/third-party/target/oauth-client</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="oauth-client-example/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="oauth-client-example" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

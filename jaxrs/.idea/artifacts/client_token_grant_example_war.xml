@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="client-token-grant-example:war">
+    <output-path>$PROJECT_DIR$/examples/oauth2-as7-example/wars/client-grant/target</output-path>
+    <root id="archive" name="client-grant.war">
+      <element id="artifact" artifact-name="client-token-grant-example:war exploded" />
+    </root>
+  </artifact>
+</component>

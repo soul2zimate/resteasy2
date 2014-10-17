@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="examples-oauth-push-messaging:war">
+    <output-path>$PROJECT_DIR$/examples/oauth1-examples/oauth-push-messaging/target</output-path>
+    <root id="archive" name="examples-oauth-push-messaging.war">
+      <element id="artifact" artifact-name="examples-oauth-push-messaging:war exploded" />
+    </root>
+  </artifact>
+</component>

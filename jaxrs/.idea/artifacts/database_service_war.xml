@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="database-service:war">
+    <output-path>$PROJECT_DIR$/examples/oauth2-as7-example/wars/database-service/target</output-path>
+    <root id="archive" name="database.war">
+      <element id="artifact" artifact-name="database-service:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jaxrs-2.0-workbook-ex06_2:war">
+    <output-path>$PROJECT_DIR$/examples/oreilly-jaxrs-2.0-workbook/ex06_2/target</output-path>
+    <root id="archive" name="ex06_2.war">
+      <element id="artifact" artifact-name="jaxrs-2.0-workbook-ex06_2:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,10 @@
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastInfosetMapProvider.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetMarshaller.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetXmlTypeProvider.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetJAXBContextFinder.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastInfosetCollectionProvider.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetXmlRootElementProvider.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetUnmarshaller.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetElementProvider.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetContext.class
+org/jboss/resteasy/plugins/providers/jaxb/fastinfoset/FastinfoSetXmlSeeAlsoProvider.class

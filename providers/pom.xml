@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>2.3.8.SP3-redhat-SNAPSHOT</version>
+        <version>2.3.9.Final-redhat-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -16,10 +16,14 @@
         <module>jaxb</module>
         <module>jettison</module>
         <module>fastinfoset</module>
+        <!--<module>test-all-jaxb</module>-->
         <module>jackson</module>
+        <!--<module>test-jackson-jaxb-coexistence</module>-->
         <module>resteasy-atom</module>
         <module>multipart</module>
         <module>yaml</module>
+        <module>resteasy-html</module>
+        <!--<module>test-resteasy-html</module>-->
         <module>resteasy-hibernatevalidator-provider</module>
     </modules>
 
@@ -34,12 +38,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-test-tjws</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

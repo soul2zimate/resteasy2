@@ -1,0 +1,7 @@
+org/jboss/resteasy/plugins/providers/html/Redirect.class
+org/jboss/resteasy/plugins/providers/html/HtmlServletDispatcher.class
+org/jboss/resteasy/plugins/providers/html/HtmlRenderableWriter.class
+org/jboss/resteasy/plugins/providers/html/HtmlServletDispatcher$1$1.class
+org/jboss/resteasy/plugins/providers/html/HtmlServletDispatcher$1.class
+org/jboss/resteasy/plugins/providers/html/View.class
+org/jboss/resteasy/plugins/providers/html/Renderable.class

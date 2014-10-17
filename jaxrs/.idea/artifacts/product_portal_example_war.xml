@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="product-portal-example:war">
+    <output-path>$PROJECT_DIR$/examples/oauth2-as7-example/wars/product-app/target</output-path>
+    <root id="archive" name="product-portal.war">
+      <element id="artifact" artifact-name="product-portal-example:war exploded" />
+    </root>
+  </artifact>
+</component>

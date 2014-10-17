@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="skeleton-key-idp-war:war">
+    <output-path>$PROJECT_DIR$/security/skeleton-key-idm/skeleton-key-idp-war/target</output-path>
+    <root id="archive" name="skeleton-key.war">
+      <element id="artifact" artifact-name="skeleton-key-idp-war:war exploded" />
+    </root>
+  </artifact>
+</component>
