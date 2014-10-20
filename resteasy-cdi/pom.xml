@@ -27,14 +27,14 @@
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
-            <version>1.0-SP1</version>
+            <version>1.0-SP4-redhat-4</version>
         </dependency>
         
         <dependency>
         	<groupId>org.jboss.spec.javax.ejb</groupId>
         	<artifactId>jboss-ejb-api_3.1_spec</artifactId>
         	<scope>provided</scope>
-        	<version>1.0.0.CR2</version>
+        	<version>1.0.2.Final-redhat-2</version>
         </dependency>
 
         <dependency>

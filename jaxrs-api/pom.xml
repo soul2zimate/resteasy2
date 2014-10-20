@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.jboss.logging</groupId>
             <artifactId>jboss-logging</artifactId>
-            <version>3.1.4.GA</version>
+            <version>3.1.4.GA-redhat-1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
