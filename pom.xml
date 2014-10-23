@@ -33,6 +33,7 @@
 
 
         <version.xerces.xercesImpl>2.9.1</version.xerces.xercesImpl>
+        <version.jboss-logging-annotations>1.2.0.Final</version.jboss-logging-annotations>
     </properties>
 
     <url>http://rest-easy.org</url>
@@ -207,6 +208,13 @@
             </dependency>
 
             <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging-annotations</artifactId>
+                <version>${version.jboss-logging-annotations}</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>${version.org.apache.httpcomponents}</version>
@@ -341,7 +349,7 @@
                 <groupId>org.jboss.com.sun.httpserver</groupId>
                 <artifactId>httpserver</artifactId>
                 <version>1.0.0.Final</version>
-            </dependency>
+            </dependency>            
         </dependencies>
     </dependencyManagement>
 
