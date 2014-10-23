@@ -1,9 +1,0 @@
-org/jboss/resteasy/cdi/JaxrsInjectionTarget.class
-org/jboss/resteasy/cdi/CdiPropertyInjector.class
-org/jboss/resteasy/cdi/ResteasyCdiExtension$2.class
-org/jboss/resteasy/cdi/CdiInjectorFactory.class
-org/jboss/resteasy/cdi/JaxrsAnnotatedType.class
-org/jboss/resteasy/cdi/ResteasyCdiExtension.class
-org/jboss/resteasy/cdi/Utils.class
-org/jboss/resteasy/cdi/ResteasyCdiExtension$1.class
-org/jboss/resteasy/cdi/CdiConstructorInjector.class

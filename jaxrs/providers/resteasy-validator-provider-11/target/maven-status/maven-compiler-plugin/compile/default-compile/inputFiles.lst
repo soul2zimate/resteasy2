@@ -1,8 +1,0 @@
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/plugins/validation/ConstraintTypeUtil11.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/plugins/validation/AbstractValidatorContextResolver.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/api/validation/ResteasyViolationException.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/api/validation/ResteasyViolationExceptionMapper.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/plugins/validation/ValidatorContextResolverCDI.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/api/validation/ViolationReport.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/plugins/validation/GeneralValidatorImpl.java
-/Users/weinanli/projs/resteasy/resteasy-forked/jaxrs/providers/resteasy-validator-provider-11/src/main/java/org/jboss/resteasy/plugins/validation/ValidatorContextResolver.java
