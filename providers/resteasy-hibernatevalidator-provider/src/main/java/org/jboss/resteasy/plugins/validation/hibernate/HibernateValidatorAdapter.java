@@ -20,6 +20,7 @@ import javax.validation.Validator;
 import org.hibernate.validator.method.MethodConstraintViolation;
 import org.hibernate.validator.method.MethodConstraintViolationException;
 import org.hibernate.validator.method.MethodValidator;
+import org.jboss.resteasy.plugins.hibernatevalidator.i18n.LogMessages;
 import org.jboss.resteasy.plugins.hibernatevalidator.i18n.Messages;
 import org.jboss.resteasy.spi.validation.DoNotValidateRequest;
 import org.jboss.resteasy.spi.validation.ValidateRequest;
@@ -62,20 +63,33 @@ class HibernateValidatorAdapter implements ValidatorAdapter {
 					set.add(group);
 				}
 			}
-			
-			if( methodValidateRequest != null ) {
+
+
+            if( methodValidateRequest != null ) {
 				for (Class<?> group : methodValidateRequest.groups()) {
 					set.add(group);
 				}
 			}
-			
-			if( resourceValidateRequest != null ) {
+
+            LogMessages.LOGGER.trace("invokedMethod.getDeclaringClass(): " + invokedMethod.getDeclaringClass());
+            LogMessages.LOGGER.trace("resource.getClass(): " + resource.getClass());
+
+            if( resourceValidateRequest != null ) {
 				
 				if (isSessionBean(invokedMethod.getDeclaringClass()) || isSessionBean(resource.getClass()))
 				{
 					if (!isWeldProxy(resource.getClass()))
 					{
-						Class<?>[] interfaces = getInterfaces(invokedMethod.getDeclaringClass());
+                        Class<?>[] interfaces = null;
+                        if (isSessionBean(invokedMethod.getDeclaringClass()))
+                        {
+                            interfaces = getInterfaces(invokedMethod.getDeclaringClass());
+                        }
+                        else
+                        {
+                            interfaces = getInterfaces(resource.getClass());
+                        }
+
 						if (interfaces.length > 0)
 						{
 							resource = getProxy(resource.getClass(), interfaces, resource);
