@@ -132,7 +132,7 @@ public static void main(String[] args) throws Exception
 <dependency>
    <groupId>org.jboss.resteasy</groupId>
    <artifactId>resteasy-cache-core</artifactId>
-   <version>2.3.9.Final-redhat-SNAPSHOT</version>
+   <version>2.3.10.Final-redhat-SNAPSHOT</version>
 </dependency>
 ]]>
 </programlisting>
