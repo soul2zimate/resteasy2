@@ -161,6 +161,7 @@ public class SecureUnmarshaller implements Unmarshaller {
           SAXParserFactory spf = SAXParserFactory.newInstance();
           configureParserFactory(spf);
           SAXParser sp = spf.newSAXParser();
+          configParser(sp);
           XMLReader xmlReader = sp.getXMLReader();
           SAXSource saxSource = new SAXSource(xmlReader, source);
           return delegate.unmarshal(saxSource);
@@ -187,6 +188,7 @@ public class SecureUnmarshaller implements Unmarshaller {
             SAXParserFactory spf = SAXParserFactory.newInstance();
             configureParserFactory(spf);
             SAXParser sp = spf.newSAXParser();
+            configParser(sp);
             XMLReader xmlReader = sp.getXMLReader();
             ((SAXSource) source).setXMLReader(xmlReader);
             return delegate.unmarshal(source);
@@ -203,6 +205,15 @@ public class SecureUnmarshaller implements Unmarshaller {
       
       throw new UnsupportedOperationException(Messages.MESSAGES.secureUnmarshallerUnexpectedUseSourceClass());
    }
+
+    private void configParser(SAXParser sp) {
+        try {
+            if (!disableExternalEntities)
+                sp.setProperty("http://javax.xml.XMLConstants/property/accessExternalDTD", "all");
+        } catch (SAXException e) {
+            // expected, jaxp 1.5 not supported
+        }
+    }
 
    public Object unmarshal(XMLStreamReader reader) throws JAXBException {
       throw new UnsupportedOperationException(Messages.MESSAGES.secureUnmarshallerUnexpectedUseXMLStreamReader());
@@ -225,6 +236,7 @@ public class SecureUnmarshaller implements Unmarshaller {
             SAXParserFactory spf = SAXParserFactory.newInstance();
             configureParserFactory(spf);
             SAXParser sp = spf.newSAXParser();
+            configParser(sp);
             XMLReader xmlReader = sp.getXMLReader();
             ((SAXSource) source).setXMLReader(xmlReader);
             return delegate.unmarshal(source, declaredType);
@@ -266,8 +278,8 @@ public class SecureUnmarshaller implements Unmarshaller {
       factory.setFeature("http://xml.org/sax/features/namespaces", true);
       factory.setFeature("http://xml.org/sax/features/external-general-entities", !disableExternalEntities);
       factory.setFeature("http://xml.org/sax/features/external-parameter-entities", !disableExternalEntities);
-      factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, enableSecureProcessingFeature); 
-      factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", disableDTDs); 
+      factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, enableSecureProcessingFeature);
+      factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", disableDTDs);
    }
 
 }
