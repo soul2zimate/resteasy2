@@ -15,7 +15,7 @@
 
         <version.cglib>2.2.2</version.cglib>
         <version.commons-httpclient>3.1</version.commons-httpclient>
-        <version.junit>4.8.2</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.org.aspectj>1.6.11</version.org.aspectj>
         <version.org.jboss.arquillian>1.0.2.Final</version.org.jboss.arquillian>
         <version.org.jboss.as.jboss-as-arquillian-container-managed>7.2.0.Final</version.org.jboss.as.jboss-as-arquillian-container-managed>
