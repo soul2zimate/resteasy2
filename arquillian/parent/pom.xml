@@ -124,7 +124,7 @@
                 </property>
             </activation>
             <properties>
-                <version.jetty>7.6.14.v20131031</version.jetty>
+                <version.jetty>9.4.34.v20201102</version.jetty>
                 <arquillian.launch>jetty</arquillian.launch>
             </properties>
             <dependencies>
