@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>3.0.3.RELEASE</version>
+            <version>5.3.18</version>
             <scope>provided</scope>
         </dependency>
         <!-- Test classes that integrates Junit 3.8 and 4 to Spring based applications -->
